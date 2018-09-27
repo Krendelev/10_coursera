@@ -41,7 +41,7 @@ def output_courses_info_to_xlsx(courses_info):
 
 if __name__ == '__main__':
     url = 'https://www.coursera.org/sitemap~www~courses.xml'
-    how_many = 5
+    how_many = 20
     courses_info = []
     for course in get_courses_list(url, how_many):
         courses_info.append(get_course_info(course))
