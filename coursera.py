@@ -22,8 +22,8 @@ def get_random_links(how_many, page):
 
 def get_course_info(page):
     info = {
-        'Title': 'Failed to get info', 'Language': '–',
-        'Start': '–', 'Duration': '–', 'Rating': '–'
+        'Title': 'Failed to get info', 'Language': '--',
+        'Start': '--', 'Duration': '--', 'Rating': '--'
         }
     try:
         info['Title'] = page.find(class_='title display-3-text').text
