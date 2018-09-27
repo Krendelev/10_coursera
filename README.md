@@ -14,6 +14,8 @@ Remember, it is recommended to use [virtualenv/venv](https://devman.org/encyclop
 
 ## Usage
 
+You can run it without argument, in this case output will be in `courses.xlsx`, or provide path to output file.
+
 ```bash
 $ python coursera.py
 ```
@@ -23,7 +25,7 @@ Title | Language | Start | Duration | Rating
 Strategic Planning and Execution | English, Subtitles: Vietnamese | Sep 27 | 4 | 4.7
 Маркетинг инновационных продуктов | Russian | Sep 27 | 7 | 4.9
 Afrique et mondialisation, regards croisés | French | Sep 27 | 11 | 4.7
-...
+.....
 
 ## Project Goals
 
