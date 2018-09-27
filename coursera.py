@@ -9,8 +9,7 @@ def get_page_content(url):
     try:
         return requests.get(url, timeout=(1, 5)).content
     except requests.exceptions.ConnectionError:
-        exit('Failed to establish connection to {0}'.format(url))
-
+        return None
 
 def get_courses_list(url, how_many):
     soup = BeautifulSoup(get_page_content(url), 'lxml')
