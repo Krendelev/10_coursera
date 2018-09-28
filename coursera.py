@@ -53,11 +53,11 @@ def get_args():
 
 if __name__ == '__main__':
     url = 'https://www.coursera.org/sitemap~www~courses.xml'
-    how_many = 5
-    courses_info = []
     source = get_parsed_source(url)
     if not source:
         exit('Failed to establish connection to {}'.format(url))
+    how_many = 20
+    courses_info = []
     for link in get_random_links(how_many, source):
         courses_info.append(get_course_info(get_parsed_source(link)))
     workbook = output_courses_info_to_xlsx(courses_info)
