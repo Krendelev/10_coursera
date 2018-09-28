@@ -21,19 +21,19 @@ def get_random_links(how_many, page):
 
 
 def get_course_info(page):
-    info = {
+    c_info = {
         'Title': 'Failed to get info', 'Language': '--',
         'Start': '--', 'Duration': '--', 'Rating': '--'
         }
     try:
-        info['Title'] = page.find(class_='title display-3-text').text
-        info['Language'] = page.find(class_='rc-Language').text
-        info['Start'] = ' '.join(page.find(class_='startdate').text.split()[1:])
-        info['Duration'] = len(page.find_all(class_='week-heading'))
-        info['Rating'] = page.find(class_='ratings-text').span.text.split()[0]
+        c_info['Title'] = page.find(class_='title display-3-text').text
+        c_info['Language'] = page.find(class_='rc-Language').text
+        c_info['Start'] = ' '.join(page.find(class_='startdate').text.split()[1:])
+        c_info['Duration'] = len(page.find_all(class_='week-heading'))
+        c_info['Rating'] = page.find(class_='ratings-text').span.text.split()[0]
     except AttributeError:
         pass
-    return info
+    return c_info
 
 
 def output_courses_info_to_xlsx(courses_info):
@@ -53,7 +53,7 @@ def get_args():
 
 if __name__ == '__main__':
     url = 'https://www.coursera.org/sitemap~www~courses.xml'
-    how_many = 20
+    how_many = 5
     courses_info = []
     source = get_parsed_source(url)
     if not source:
